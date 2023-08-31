@@ -7,12 +7,15 @@ const PersonCard = (props) => {
     }
 
     return(
-        <div>
-            <h1 style={{color:"green"}}>{lastName}, {firstName}</h1>
-            <p>Age: {age}</p>
-            <p>Hair Color: {hairColor}</p>
-            <button onClick={ () => alert("Birthday Button has been clicked")}>Birthday Button for {firstName} {lastName}</button>
-        </div>
+        <fieldset>
+            <legend>PersonCard.jsx</legend>
+            <div>
+                <h1 style={{color:"green"}}>{lastName}, {firstName}</h1>
+                <p>Age: {age}</p>
+                <p>Hair Color: {hairColor}</p>
+                <button onClick={alertMSG}>Birthday Button for {firstName} {lastName}</button>
+            </div>
+        </fieldset>
     );
 }
 export default PersonCard;

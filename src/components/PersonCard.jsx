@@ -1,9 +1,20 @@
+import { useState } from 'react';
 const PersonCard = (props) => {
 
     const { firstName, lastName, age, hairColor } = props;
 
-    const alertMSG = () => {
-        alert("Happy Birthday!")
+    // const alertMSG = () => {
+    //     alert("Happy Birthday!")
+    // }
+
+    const [ ages, setAges ] = useState({
+        ageCount: age
+    });
+
+    const ageHandler = () =>{
+        setAges({
+            ageCount: ages.ageCount + 1
+        })
     }
 
     return(
@@ -11,9 +22,9 @@ const PersonCard = (props) => {
             <legend>PersonCard.jsx</legend>
             <div>
                 <h1 style={{color:"green"}}>{lastName}, {firstName}</h1>
-                <p>Age: {age}</p>
+                <p>Age: {ages.ageCount}</p>
                 <p>Hair Color: {hairColor}</p>
-                <button onClick={alertMSG}>Birthday Button for {firstName} {lastName}</button>
+                <button onClick={ageHandler}>Birthday Button for {firstName} {lastName}</button>
             </div>
         </fieldset>
     );
